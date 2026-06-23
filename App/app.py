@@ -147,9 +147,16 @@ def main():
 
     app.add_handler(conv_handler)
 
-    print("🚀 Bot Running...")
+    print("🚀 Bot Running on Webhook...")
 
-    app.run_polling()
+    PORT = int(os.environ.get("PORT", 10000))
+    WEBHOOK_URL = os.environ.get("WEBHOOK_URL")
+    
+    app.run_webhook(
+        listen="0.0.0.0",
+        port=PORT,
+        webhook_url=WEBHOOK_URL
+    )
 
 
 if __name__ == "__main__":
